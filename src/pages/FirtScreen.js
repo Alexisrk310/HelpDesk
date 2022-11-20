@@ -26,7 +26,7 @@ const FirtScreen = () => {
     }
     return (
         <Formik
-            initialValues={{ fullName: '', address: '', tell: '', razon: '', ticket: idTicket }}
+            initialValues={{ fullName: '', address: '', tell: '', razon: '', ticket: idTicket, hora: Date('dd' / 'mm' / 'yy') }}
             onSubmit={values => handleSubmit(values)}
             validate={values => {
                 const errors = {};
@@ -65,6 +65,18 @@ const FirtScreen = () => {
                                 value={values.fullName}
                             />
                             <ErrorMessage name="fullName" component={() => <TypeError msg={errors.fullName} />} />
+                        </div>
+                        <div className="mb-3">
+                            <label className="form-label font-main">Fecha</label>
+                            <input
+                                className="form-control inputDesk"
+                                name="fecha"
+                                type='text'
+                                onChange={handleChange}
+                                value={values.hora}
+                                readOnly
+                                disabled
+                            />
                         </div>
                         <div className="mb-3">
                             <label className="form-label font-main">Direccion</label>
@@ -115,8 +127,9 @@ const FirtScreen = () => {
                             />
 
                         </div>
+
+
                         <button type="submit" className="btn btn-primary w-100 font-main">Reportar</button>
-                        <button className="btn btn-info w-100 font-main mt-2" onClick={() => Navigate('/home')}>Ver casos</button>
                     </form>
                 </div>
 

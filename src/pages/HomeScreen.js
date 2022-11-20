@@ -54,7 +54,9 @@ const HomeScreen = () => {
                         <div className="card card-content m-2 " key={x.ticket} id={x.ticket}>
                             <div className="card-body">
                                 <h5 className={'card-title, caso'}>Nombre: {x.fullName}</h5>
+                                <p className={'card-text, caso'} >Fecha: {x.hora}</p>
                                 <p className={'card-text, caso'}>Direccion: {x.address}</p>
+                                <p className={'card-text, caso'}>Caso: {x.razon}</p>
                                 <p className={'card-text, caso'}>Telefono: {x.tell}</p>
                                 <p className={'card-text, caso'} >Tickets: {x.ticket}</p>
 
